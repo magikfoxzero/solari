@@ -6,7 +6,7 @@ $settings_json='{"zip":"'.$_POST['zip'].'","country":"'.$_POST['country'].'","np
 $settings_array=json_decode($settings_json,true);
 $query=solari_ask($accepted_key,base64_encode($settings_json),base64_encode($_POST['say']));
 $result="User: ".$query->usersay."<br />Solari: ".$query->botsay;
-var_dump($query);
+
 }
 
 ?>
