@@ -105,5 +105,19 @@ convo_id <input type="text" name="convo_id" value="default" /><br />
 units <input type="text" name="units" value="imperial" /><br />
 <br />
     </form>
+	  
+<br /><hr />
+Sample Questions you can ask:<br />
+What's the weather?<br />
+What's the weather for tomorrow?<br />
+Search wiki for {topic}?<br />
+Search wikipedia for {topic}?<br />	
+what is a {topic}?<br />	  
+What is an {topic}?<br />
+What's a {topic}?<br />	  
+What's the news?<br />	  
+What's the time?<br />
+What's the date?<br />
+What day is it?<br />	  
   </body>
 </html>
