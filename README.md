@@ -1,5 +1,5 @@
 # What is Solari?
-Soalri is my attempt at building an artificial intelligence application that is similar to Amazon's Alexa and Google Home.  Originally, the build used AIML to talk with the user, but over time AIML became cumbersome.   Solari is a RESTful API engine that allows one to ask it questions and to get a response returned in json format.  This can then be fed through the text-to-spech API to allow an application to speak to the user.
+Solari is my attempt at building an artificial intelligence application that is similar to Amazon's Alexa and Google Home.  Originally, the build used AIML to talk with the user, but over time AIML became cumbersome.   Solari is a RESTful API engine that allows one to ask it questions and to get a response returned in json format.  This can then be fed through the text-to-spech API to allow an application to speak to the user.
 
 I have built the application to utilize modules to pull information from various third parties.  This allows Solari to be  extremely flexible in the services it can provide.   
 
