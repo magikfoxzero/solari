@@ -2,9 +2,8 @@
 include("/var/www/solari/api/src/apicalls.php");
 
 if (isset($_POST['say'])) {
-$settings_json='{"zip":"'.$_POST['zip'].'","country":"'.$_POST['country'].'","npr_channel":"'.$_POST['npr_channel'].'","timezone":"'.$_POST['timezone'].'","engine":"'.$_POST['engine'].'","convo_id":"'.$_POST['convo_id'].'","units":"'.$_POST['units'].'"}';
+$settings_json='{\\"zip\\":\\"'.$_POST['zip'].'\\",\\"country\\":\\"'.$_POST['country'].'\\",\\"npr_channel\\":\\"'.$_POST['npr_channel'].'\\",\\"timezone\\":\\"'.$_POST['timezone'].'\\",\\"engine\\":\\"'.$_POST['engine'].'\\",\\"convo_id\\":\\"'.$_POST['convo_id'].'\\",\\"units\\":\\"'.$_POST['units'].'\\"}';
 $settings_array=json_decode($settings_json,true);
-$settings_json=base64_encode($settings_json);
 $query=solari_ask($accepted_key,$settings_json,$_POST['say']);
 $result="User: ".$query->usersay."<br />Solari: ".$query->botsay;
 }
