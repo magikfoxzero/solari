@@ -1,5 +1,9 @@
 <?php
 
+function reductions ($string) {
+	if(strpos($string,'"') !== false ){ str_replace('"', '', $fileContents);}//Eliminate quotes
+}
+
 class XmlToJson {
 
 	public function Parse ($url) {
