@@ -65,8 +65,10 @@ $app->post('/ask', function (Request $request, Response $response) {
         $parsedBody = $request->getParsedBody();
          $text = urlencode(base64_decode($parsedBody["text"]));
          $original_text = base64_encode(urldecode($text));
-        $text=reductions(strtolower($text));
-         $key=$parsedBody["key"];
+        $text=strtolower($text);
+	
+         $key=$parsedBody["key"];$text = urlencode(reductions(urldecode($text)));
+
          $settings=urldecode(base64_decode($parsedBody["settings"]));
         $settings_array=json_decode($settings,true);
         $convo_id=$settings_array["convo_id"];
