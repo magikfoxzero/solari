@@ -64,7 +64,7 @@ $OUTPUT=$voice['response'] ;
 $app->post('/ask', function (Request $request, Response $response) {    
         $parsedBody = $request->getParsedBody();
          $text = urlencode(base64_decode($parsedBody["text"]));
-         $original_text = addslashes(urldecode($text));
+         $original_text = base64_encode(urldecode($text));
         $text=reductions(strtolower($text));
          $key=$parsedBody["key"];
          $settings=urldecode(base64_decode($parsedBody["settings"]));
