@@ -5,7 +5,7 @@ if (isset($_POST['say'])) {
 $settings_json='{"zip":"'.$_POST['zip'].'","country":"'.$_POST['country'].'","npr_channel":"'.$_POST['npr_channel'].'","timezone":"'.$_POST['timezone'].'","engine":"'.$_POST['engine'].'","convo_id":"'.$_POST['convo_id'].'","units":"'.$_POST['units'].'"}';
 $settings_array=json_decode($settings_json,true);
 $query=solari_ask($accepted_key,base64_encode($settings_json),base64_encode($_POST['say']));
-$result="User: ".$query->usersay."<br />Solari: ".$query->botsay;
+$result="User: ".base64_decode($query->usersay)."<br />Solari: ".$query->botsay;
 
 }
 
