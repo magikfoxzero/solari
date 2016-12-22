@@ -63,13 +63,14 @@ $OUTPUT=$voice['response'] ;
 
 $app->post('/ask', function (Request $request, Response $response) {    
         $parsedBody = $request->getParsedBody();
-         $text = urlencode($parsedBody["text"]);
-	 $original_text = urldecode(base64_decode($text));
-	$text=strtolower(base64_decode($text));
+         $text = urlencode(base64_decode($parsedBody["text"]));
+         $original_text = urldecode($text);
+        $text=strtolower($text);
          $key=$parsedBody["key"];
-	 $settings=urldecode(base64_decode($parsedBody["settings"]));
-	$settings_array=json_decode($settings,true);
-	$convo_id=$settings_array["convo_id"];
+         $settings=urldecode(base64_decode($parsedBody["settings"]));
+        $settings_array=json_decode($settings,true);
+        $convo_id=$settings_array["convo_id"];
+
 if ($key != accepted_key){$response = $response->withStatus(404);$response = $response->withHeader('Content-Type', 'application/json'); $response->getBody()->write(incorrect_key); return $response;} 
 
 		$children = array();
