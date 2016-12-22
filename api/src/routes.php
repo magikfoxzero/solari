@@ -67,7 +67,7 @@ $app->post('/ask', function (Request $request, Response $response) {
 	 $original_text = urldecode($text);
 	$text=strtolower($text);
          $key=$parsedBody["key"];
-	 $settings=urldecode(base64_decode($parsedBody["settings"]));
+	 $settings=urldecode($parsedBody["settings"]);
 	$settings_array=json_decode($settings,true);
 	$convo_id=$settings_array["convo_id"];
 if ($key != accepted_key){$response = $response->withStatus(404);$response = $response->withHeader('Content-Type', 'application/json'); $response->getBody()->write(incorrect_key); return $response;} 
