@@ -18,8 +18,9 @@ define('incorrect_key','{"status":"error","code":"-1","text":"Incorrect API Key.
 define('accepted_key', $SolariAPIKey);
 
 
-$app->post('/tts', function (Request $request, Response $response) {    
-        $parsedBody = $request->getParsedBody();
+$app->post('/tts', function (Request $request, Response $response) {   
+         global $VoiceRSSKey;
+         $parsedBody = $request->getParsedBody();
          $text = urldecode($parsedBody["text"]);
          $key=$parsedBody["key"];
          $engine=$parsedBody["engine"];
