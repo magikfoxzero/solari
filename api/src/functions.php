@@ -1,7 +1,7 @@
 <?php
 
 function reductions ($string) {
-        if(strpos($string,'"') !== false ){$string = str_replace('"', '', $fileContents);}//Eliminate quotes
+        if(strpos($string,'"') !== false ){$string = str_replace('"', '', $string);}//Eliminate quotes
         return $string;
 }
 
