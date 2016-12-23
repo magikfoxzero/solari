@@ -16,7 +16,22 @@ class nasa_news extends skill {
         }
 
         private function get_output($intent){
-		if ($intent == "nasa"){$newval="https://www.nasa.gov/rss/dyn/breaking_news.rss";}
+		$rssurl=null;
+		if ($intent == "nasa breaking news"){$rssurl="https://www.nasa.gov/rss/dyn/breaking_news.rss";}
+		else {$rssurl="https://www.nasa.gov/rss/dyn/breaking_news.rss";}
+		
+		
+		$value=XmlToJson::Parse($rssurl);
+                $newval="";
+		$i=0;
+                foreach(json_decode($value)->items as &$myitem){
+		if ($i < 15){
+                $newval=strip_tags($newval . "".$myitem->title. ".  ". $myitem->description."\r\n\r\n");
+                }
+		$i++;
+		}
+		
+		
                 $value='{"convo_id":"'.$this->convo_id.'",  "usersay":"'.$this->original_text.'", "botsay":"'.$newval.'"}';;
                 
 
