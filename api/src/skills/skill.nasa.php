@@ -18,9 +18,7 @@ class nasa_news extends skill {
         private function get_output(){
 		if ($intent == "nasa"){$newval="https://www.nasa.gov/rss/dyn/breaking_news.rss";}
                 $value='{"convo_id":"'.$this->convo_id.'",  "usersay":"'.$this->original_text.'", "botsay":"'.$newval.'"}';;
-                }
-		$i++;
-		}
+                
 
 		
 		return $value;
