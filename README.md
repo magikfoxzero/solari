@@ -13,4 +13,6 @@ Simple.  Help build the modules that are in the api/src/skills folder.  I have b
 
 Anyone who wants to build a client to work with the service would be greatly appreciated as well.   Bonus points to whoever can implement a client that uses the wake word Solari (pronounced So-Lar-ee).
 
+As far as a more advanced scenario, I would like to start investigating deep learning algorithms such as tensorflow, and see how they may be able to be utlized in Solari.  Perhaps, such a framework could be used to build models relating to determining a users intention.
+
 And finally, any fine tuning and optimization to the api engine that the application could benefit from is also welcome.
