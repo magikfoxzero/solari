@@ -12,12 +12,12 @@ class nasa_news extends skill {
         private $api_url = "";
 
         private function check_intent() {
-		 if(strpos($this->text,"nasa") !== false  ){return "nasa";}else {return "empty";}
+		 if(strpos($this->text,"news from nasa") !== false  ){return "nasa";}else {return "empty";}
         }
 
         private function get_output($intent){
 		$rssurl=null;
-		if ($intent == "nasa breaking news"){$rssurl="https://www.nasa.gov/rss/dyn/breaking_news.rss";}
+		if ($intent == "news from nasa"){$rssurl="https://www.nasa.gov/rss/dyn/breaking_news.rss";}
 		else {$rssurl="https://www.nasa.gov/rss/dyn/breaking_news.rss";}
 		
 		
