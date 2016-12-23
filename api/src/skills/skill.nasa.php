@@ -24,7 +24,7 @@ class nasa_news extends skill {
 		$value=XmlToJson::Parse($rssurl);
                 $newval="";
 		$i=0;
-                foreach(json_decode($value)->rss->channel->item as &$myitem){
+                foreach(json_decode($value)->channel->item as &$myitem){
 		if ($i < 15){
                 $newval=strip_tags($newval . "".$myitem->title. ".  ". $myitem->description."\r\n\r\n");
                 }
