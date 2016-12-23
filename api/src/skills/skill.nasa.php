@@ -15,7 +15,7 @@ class nasa_news extends skill {
 		 if(strpos($this->text,"nasa") !== false  ){return "nasa";}else {return "empty";}
         }
 
-        private function get_output(){
+        private function get_output($intent){
 		if ($intent == "nasa"){$newval="https://www.nasa.gov/rss/dyn/breaking_news.rss";}
                 $value='{"convo_id":"'.$this->convo_id.'",  "usersay":"'.$this->original_text.'", "botsay":"'.$newval.'"}';;
                 
